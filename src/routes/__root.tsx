@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Find autism schools, psychologists, clinics and support services across the Eastern Cape, South Africa.",
       },
-      { property: "og:title", content: "Autism Connect Eastern Cape" },
+      { property: "og:title", content: "Autism Connect Eastern Cape — Find Schools & Support" },
       {
         property: "og:description",
         content:
@@ -89,6 +89,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Autism Connect Eastern Cape — Find Schools & Support" },
+      { name: "description", content: "Autism Connect Eastern Cape is a responsive web app for finding autism support services in the Eastern Cape, South Africa." },
+      { property: "og:description", content: "Autism Connect Eastern Cape is a responsive web app for finding autism support services in the Eastern Cape, South Africa." },
+      { name: "twitter:description", content: "Autism Connect Eastern Cape is a responsive web app for finding autism support services in the Eastern Cape, South Africa." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b82eed3-9cb7-483d-bfb2-23ffd5646198/id-preview-b2b065b8--030e5757-4629-44a8-9be8-44471bf35fda.lovable.app-1782848863315.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b82eed3-9cb7-483d-bfb2-23ffd5646198/id-preview-b2b065b8--030e5757-4629-44a8-9be8-44471bf35fda.lovable.app-1782848863315.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
