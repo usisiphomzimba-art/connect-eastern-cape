@@ -9,9 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VolunteerRouteImport } from './routes/volunteer'
+import { Route as PsychologistsRouteImport } from './routes/psychologists'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ClinicsRouteImport } from './routes/clinics'
+import { Route as ActivitiesRouteImport } from './routes/activities'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SchoolsIndexRouteImport } from './routes/schools.index'
+import { Route as SchoolsIdRouteImport } from './routes/schools.$id'
 
+const VolunteerRoute = VolunteerRouteImport.update({
+  id: '/volunteer',
+  path: '/volunteer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PsychologistsRoute = PsychologistsRouteImport.update({
+  id: '/psychologists',
+  path: '/psychologists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClinicsRoute = ClinicsRouteImport.update({
+  id: '/clinics',
+  path: '/clinics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -22,35 +53,124 @@ const SchoolsIndexRoute = SchoolsIndexRouteImport.update({
   path: '/schools/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchoolsIdRoute = SchoolsIdRouteImport.update({
+  id: '/schools/$id',
+  path: '/schools/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/clinics': typeof ClinicsRoute
+  '/contact': typeof ContactRoute
+  '/psychologists': typeof PsychologistsRoute
+  '/volunteer': typeof VolunteerRoute
+  '/schools/$id': typeof SchoolsIdRoute
   '/schools/': typeof SchoolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/clinics': typeof ClinicsRoute
+  '/contact': typeof ContactRoute
+  '/psychologists': typeof PsychologistsRoute
+  '/volunteer': typeof VolunteerRoute
+  '/schools/$id': typeof SchoolsIdRoute
   '/schools': typeof SchoolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/clinics': typeof ClinicsRoute
+  '/contact': typeof ContactRoute
+  '/psychologists': typeof PsychologistsRoute
+  '/volunteer': typeof VolunteerRoute
+  '/schools/$id': typeof SchoolsIdRoute
   '/schools/': typeof SchoolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/schools/'
+  fullPaths:
+    | '/'
+    | '/activities'
+    | '/clinics'
+    | '/contact'
+    | '/psychologists'
+    | '/volunteer'
+    | '/schools/$id'
+    | '/schools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/schools'
-  id: '__root__' | '/' | '/schools/'
+  to:
+    | '/'
+    | '/activities'
+    | '/clinics'
+    | '/contact'
+    | '/psychologists'
+    | '/volunteer'
+    | '/schools/$id'
+    | '/schools'
+  id:
+    | '__root__'
+    | '/'
+    | '/activities'
+    | '/clinics'
+    | '/contact'
+    | '/psychologists'
+    | '/volunteer'
+    | '/schools/$id'
+    | '/schools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActivitiesRoute: typeof ActivitiesRoute
+  ClinicsRoute: typeof ClinicsRoute
+  ContactRoute: typeof ContactRoute
+  PsychologistsRoute: typeof PsychologistsRoute
+  VolunteerRoute: typeof VolunteerRoute
+  SchoolsIdRoute: typeof SchoolsIdRoute
   SchoolsIndexRoute: typeof SchoolsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/volunteer': {
+      id: '/volunteer'
+      path: '/volunteer'
+      fullPath: '/volunteer'
+      preLoaderRoute: typeof VolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/psychologists': {
+      id: '/psychologists'
+      path: '/psychologists'
+      fullPath: '/psychologists'
+      preLoaderRoute: typeof PsychologistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clinics': {
+      id: '/clinics'
+      path: '/clinics'
+      fullPath: '/clinics'
+      preLoaderRoute: typeof ClinicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +185,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/schools/$id': {
+      id: '/schools/$id'
+      path: '/schools/$id'
+      fullPath: '/schools/$id'
+      preLoaderRoute: typeof SchoolsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActivitiesRoute: ActivitiesRoute,
+  ClinicsRoute: ClinicsRoute,
+  ContactRoute: ContactRoute,
+  PsychologistsRoute: PsychologistsRoute,
+  VolunteerRoute: VolunteerRoute,
+  SchoolsIdRoute: SchoolsIdRoute,
   SchoolsIndexRoute: SchoolsIndexRoute,
 }
 export const routeTree = rootRouteImport

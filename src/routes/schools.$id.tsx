@@ -20,8 +20,10 @@ const requiredDocs = [
   "Passport Photo (if required)",
 ];
 
+import type { School } from "@/types";
+
 export const Route = createFileRoute("/schools/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { school: School } => {
     const school = schools.find((s) => s.id === params.id);
     if (!school) throw notFound();
     return { school };
