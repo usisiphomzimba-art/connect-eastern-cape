@@ -1,0 +1,73 @@
+import type { Clinic, EmergencyContact } from "@/types";
+
+export const clinics: Clinic[] = [
+  {
+    id: "livingstone-hospital",
+    name: "Livingstone Tertiary Hospital",
+    address: "Stanford Road, Korsten, Port Elizabeth",
+    town: "Port Elizabeth",
+    phone: "041 405 9111",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Livingstone Hospital Port Elizabeth",
+  },
+  {
+    id: "frere-hospital",
+    name: "Frere Hospital",
+    address: "Amalinda Main Road, East London",
+    town: "East London",
+    phone: "043 709 1111",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Frere Hospital East London",
+  },
+  {
+    id: "nelson-mandela-academic",
+    name: "Nelson Mandela Academic Hospital",
+    address: "Nelson Mandela Drive, Mthatha",
+    town: "Mthatha",
+    phone: "047 502 4000",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Nelson Mandela Academic Hospital Mthatha",
+  },
+  {
+    id: "frontier-hospital",
+    name: "Frontier Regional Hospital",
+    address: "Madeira Road, Komani",
+    town: "Komani (Queenstown)",
+    phone: "045 808 4200",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Frontier Hospital Queenstown",
+  },
+  {
+    id: "midland-hospital",
+    name: "Midland Hospital",
+    address: "Cradock Road, Graaff-Reinet",
+    town: "Graaff-Reinet",
+    phone: "049 807 7811",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Midland Hospital Graaff-Reinet",
+  },
+  {
+    id: "aliwal-north-hospital",
+    name: "Aliwal North Hospital",
+    address: "Dan Pienaar Avenue, Maletswai",
+    town: "Maletswai (Aliwal North)",
+    phone: "051 633 9609",
+    emergency: "10177",
+    hours: "24 hours",
+    mapsQuery: "Aliwal North Hospital",
+  },
+];
+
+export const emergencyContacts: EmergencyContact[] = [
+  { id: "ambulance", name: "Ambulance", number: "10177", description: "Emergency medical services", icon: "🚑" },
+  { id: "police", name: "Police (SAPS)", number: "10111", description: "South African Police Service", icon: "🚓" },
+  { id: "fire", name: "Fire Department", number: "112", description: "Fire and rescue (from mobile)", icon: "🚒" },
+  { id: "childline", name: "Childline SA", number: "116", description: "Child protection & abuse helpline", icon: "🧒" },
+  { id: "sadag", name: "SADAG Mental Health Crisis", number: "0800 567 567", description: "24-hour mental health support", icon: "💙" },
+  { id: "lifeline", name: "Lifeline Crisis Line", number: "0861 322 322", description: "Counselling and crisis support", icon: "☎️" },
+];
