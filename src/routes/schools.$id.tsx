@@ -125,13 +125,13 @@ function SchoolDetailPage() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Therapy services</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  {school.therapyServices.map((t) => <Badge key={t} variant="secondary">{t}</Badge>)}
+                  {school.therapyServices.map((t: string) => <Badge key={t} variant="secondary">{t}</Badge>)}
                 </div>
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Activities offered</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  {school.activities.map((a) => <Badge key={a} variant="outline">{a}</Badge>)}
+                  {school.activities.map((a: string) => <Badge key={a} variant="outline">{a}</Badge>)}
                 </div>
               </div>
             </CardContent>
